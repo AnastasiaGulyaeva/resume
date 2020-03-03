@@ -1,0 +1,12 @@
+.dev-icons .list-inline-item i:hover {
+  color: #cd928d;
+}
+
+svg {
+  fill: #868e96;
+  width: 56px;
+  height: 56px;
+}
+svg:hover {
+  fill: #cd928d;
+}

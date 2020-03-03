@@ -1,1 +1,137 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Gotham";
+  src: url("assets/fonts/gotham-light.eot");
+  src: url("assets/fonts/gotham-light.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/gotham-light.woff2") format("woff2"),
+    url("assets/fonts/gotham-light.woff") format("woff"),
+    url("assets/fonts/gotham-light.ttf") format("truetype"),
+    url("assets/fonts/gotham-light.svg#gotham-light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("assets/fonts/gotham-bold.eot");
+  src: url("assets/fonts/gotham-bold.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/gotham-bold.woff2") format("woff2"),
+    url("assets/fonts/gotham-bold.woff") format("woff"),
+    url("assets/fonts/gotham-bold.ttf") format("truetype"),
+    url("assets/fonts/gotham-bold.svg#gotham-bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("assets/fonts/gotham-medium.eot");
+  src: url("assets/fonts/gotham-medium.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/gotham-medium.woff2") format("woff2"),
+    url("assets/fonts/gotham-medium.woff") format("woff"),
+    url("assets/fonts/gotham-medium.ttf") format("truetype"),
+    url("assets/fonts/gotham-medium.svg#gotham-medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Gotham";
+  font-size: 1rem;
+  color: #cd928d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Gotham";
+  padding-top: 54px;
+  color: #868e96;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 0;
+    padding-left: 17rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gotham";
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #343a40;
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.15rem;
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: normal;
+}
+
+section.resume-section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  max-width: 75rem;
+}
+
+section.resume-section .resume-item .resume-date {
+  min-width: none;
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh;
+  }
+  section.resume-section .resume-item .resume-date {
+    min-width: 18rem;
+  }
+}
+
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+.bg-primary {
+  background-color: #3f888f !important;
+}
+
+.text-primary {
+  color: #3f888f !important;
+}
+
+a {
+  color: #3f888f;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #cd928d;
+}

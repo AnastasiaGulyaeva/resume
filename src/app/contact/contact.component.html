@@ -1,0 +1,53 @@
+<section
+  class="resume-section p-3 p-lg-5 d-flex align-items-center"
+  id="contact"
+>
+  <div class="w-100">
+    <h2 class="mb-5">Contact Info</h2>
+
+    <form
+      [formGroup]="myFirstReactiveForm"
+      (submit)="onSubmit()"
+      class="mt-3"
+      action="assets/send.php"
+      method="POST"
+    >
+      <input
+        type="text"
+        id="name"
+        name="name"
+        formControlName="name"
+        placeholder="Nombre completo"
+        class="form-control px-0"
+      />
+      <div class="error" *ngIf="isControlInvalid('name')">
+        Nombre no puede tener los numeros y puede mantener solo las letras
+        latinas.
+      </div>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        formControlName="email"
+        placeholder="Correo electronico"
+        class="form-control px-0 mt-4"
+      />
+      <div class="error my-0" *ngIf="isControlInvalid('email')">
+        El campo no contiene una dirección de correo electrónica válida.
+      </div>
+      <textarea
+        name="message"
+        id="message"
+        formControlName="message"
+        maxlength="300"
+        class="form-control px-0 mt-4"
+        placeholder="Mensaje"
+      ></textarea>
+      <div class="error" *ngIf="isControlInvalid('message')">
+        Mensaje no puede mantener mas que 300 simbolos.
+      </div>
+
+      <button class="btn btn-primary w-100" type="submit">send</button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,103 @@
+/* Button style */
+.btn {
+  font-size: 22px;
+  text-transform: capitalize;
+  padding: 6px 44px;
+  border-radius: 5px;
+  border: 0;
+  position: relative;
+  z-index: 1;
+  transition: 0.2s ease;
+}
+
+.btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.btn-sm {
+  font-size: 15px;
+  padding: 10px 30px;
+}
+
+.btn-xs {
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+.btn-primary {
+  background: #495057;
+  color: #fff;
+}
+
+.btn-primary:active {
+  background: #bc8f8f !important;
+}
+
+.btn-primary:hover {
+  background: #cd928d;
+}
+
+.btn-primary.focus,
+.btn-primary.active {
+  background: #cd928d !important;
+  box-shadow: none !important;
+}
+
+.form-control {
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #c7c7c7;
+  height: 50px;
+}
+
+.form-control:focus {
+  border-color: #3f888f;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+textarea.form-control {
+  height: 100px;
+}
+
+::-webkit-input-placeholder {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: normal;
+}
+::-moz-placeholder {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: normal;
+} /* Firefox 19+ */
+:-moz-placeholder {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: normal;
+} /* Firefox 18- */
+:-ms-input-placeholder {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: normal;
+}
+
+input.ng-touched.ng-invalid {
+  color: #bc8f8f;
+  border-color: #bc8f8f;
+}
+input.ng-touched.ng-valid {
+  color: #3f888f;
+  border-color: #3f888f;
+}
+
+.error {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: normal;
+  color: #bc8f8f;
+}
