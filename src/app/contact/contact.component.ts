@@ -1,7 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { Message } from "@angular/compiler/src/i18n/i18n_ast";
-import { HttpClient } from "@angular/common/http";
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders
+} from "@angular/common/http";
 
 @Component({
   selector: "app-contact",
@@ -9,7 +12,17 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./contact.component.css"]
 })
 export class ContactComponent implements OnInit {
+  name: string;
+  email: string;
+  message: string;
   myFirstReactiveForm: FormGroup;
+
+  ServerUrl = "http://localhost/angular/send.php";
+  errorData: {};
+
+  httpOptions = {
+    headers: new HttpHeaders({ "Content-Type": "application/json" })
+  };
 
   constructor(private fb: FormBuilder, private http: HttpClient) {}
 
@@ -30,6 +43,24 @@ export class ContactComponent implements OnInit {
 
     /** TODO: Обработка данных формы */
     console.log(this.myFirstReactiveForm.value);
+
+    // const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
+    // alert(allInfo);
+
+    this.sendApi(this.name, this.email, this.message);
+  }
+
+  sendApi(name: string, email: string, message: string) {
+    this.http
+      .post<any>(this.ServerUrl, { name: name, email: email, message: message })
+      .subscribe(data => {
+        console.log(data);
+        if (data == 0) {
+          alert("El mensaje se envió correctamente!");
+        } else if (data == 1) {
+          alert("Hubo un error!");
+        }
+      });
   }
 
   isControlInvalid(controlName: string): boolean {

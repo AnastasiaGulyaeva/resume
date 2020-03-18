@@ -1,12 +1,17 @@
+.logo {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: normal;
+}
 #sideNav .navbar-nav .nav-item .nav-link {
   font-family: "Gotham";
   font-weight: 500;
   font-style: normal;
-  text-transform: uppercase;
 }
 
 #sideNav .navbar-toggler:focus {
-  outline-color: #d48a6e;
+  outline-color: transparent !important;
+  outline: none !important;
 }
 
 @media (min-width: 992px) {
@@ -20,16 +25,19 @@
     width: 17rem;
     height: 100vh;
   }
+
   #sideNav .navbar-brand {
     display: flex;
     margin: auto auto 0;
     padding: 0.5rem;
   }
+
   #sideNav .navbar-brand .img-profile {
     max-width: 10rem;
     max-height: 10rem;
     border: 0.5rem solid rgba(255, 255, 255, 0.2);
   }
+
   #sideNav .navbar-collapse {
     display: flex;
     align-items: flex-start;
@@ -37,14 +45,264 @@
     width: 100%;
     margin-bottom: auto;
   }
+
   #sideNav .navbar-collapse .navbar-nav {
     flex-direction: column;
     width: 100%;
   }
+
   #sideNav .navbar-collapse .navbar-nav .nav-item {
     display: block;
   }
+
   #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
     display: block;
   }
+}
+
+li {
+  list-style: none;
+  position: relative;
+}
+
+a:hover:before {
+  clip: rect(0, 190px, 190px, 0);
+}
+
+a:before {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  content: attr(data-content);
+  display: inline-block;
+  color: white;
+  width: 100%;
+  clip: rect(0, 0, 0, 0);
+  -webkit-transition: clip cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+  transition: clip cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+}
+
+/* полоска рядом */
+/* li {
+  box-sizing: border-box;
+  position  : relative;
+}
+li:before {
+  content         : "";
+  position        : absolute;
+  height          : 100%;
+  width           : 4px;
+  left            : 0;
+  background-color: white;
+  opacity         : 0;
+  transition      : opacity 0.5s ease;
+}
+li:hover:before {
+  opacity   : 1;
+  transition: opacity 0.5s ease;
+}
+a {
+  color          : white;
+  text-decoration: none;
+} */
+
+/* работающий эффект */
+.social-icons a {
+  display: inline-block;
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #ec39a2;
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+}
+.social-icons a:hover {
+  box-shadow: inset 0 0 0 50px #ec39a2;
+  color: #fff;
+}
+
+/* почти работает */
+/* .social-icons a {
+  display: inline-block;
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff !important;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+i {
+  color: #fff !important;
+  z-index: 1;
+}
+.social-icons a:hover:before {
+  clip: rect(0, 2rem, 2rem, 0);
+  background: #ec39a2;
+}
+
+.social-icons a::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  left: 0px;
+  top: 0px;
+  border-radius: 50px;
+  clip: rect(0, 0px, 0px, 0);
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+  z-index: -1;
+} */
+
+.social-icons a:last-child {
+  margin-right: 0;
+}
+
+.dev-icons {
+  font-size: 3rem;
+}
+
+.navBarGrid > .logo {
+  grid-area: logo;
+}
+
+.navBarGrid > .menuNav {
+  grid-area: menuNav;
+  padding: 0.25rem 0;
+}
+
+.navBarGrid > .social {
+  grid-area: social;
+  text-align: right;
+}
+
+.navbar-dark .navbar-toggler {
+  color: transparent !important;
+  border-color: transparent !important;
+  border: none !important;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10+ and Edge */
+  user-select: none;
+  /* Standard syntax */
+}
+
+@media (max-width: 992px) {
+  .navBarGrid {
+    display: grid !important;
+    align-items: center;
+    max-height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    grid-template-columns: 50% 45% 28px;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo social menuNav";
+  }
+
+  .navBarGrid .menuItemsList {
+    grid-column: 1 / span 3;
+  }
+
+  .social-icons a {
+    margin-bottom: 0rem;
+  }
+
+  .menuNavCentred {
+    text-align: center;
+  }
+
+  .navbar-toggler {
+    padding: 0 !important;
+  }
+
+  .social-icons a:last-child {
+    margin-right: 1rem;
+  }
+
+  .navbar-nav {
+    padding: 30px 0 15px 0;
+  }
+}
+
+/* Hamburger Icon */
+
+#nav-toggle {
+  display: none;
+}
+
+.hamburger-icon {
+  /*display : block;*/
+  position: relative;
+  width: 28px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.hamburger-icon:hover span,
+.hamburger-icon:hover:before,
+.hamburger-icon:hover:after {
+  background-color: white;
+}
+
+.hamburger-icon span,
+.hamburger-icon:before,
+.hamburger-icon:after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1px;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  transform-origin: center top;
+  transition: transform 0.2s, top 0.2s 0.2s;
+}
+
+.hamburger-icon:after {
+  top: 100%;
+  transform-origin: center bottom;
+}
+
+#nav-toggle:checked + .hamburger-icon span {
+  opacity: 0;
+}
+
+#nav-toggle:checked + .hamburger-icon:after {
+  top: 50%;
+  transform: rotate(-45deg);
+  transition: top 0.2s, transform 0.2s 0.2s;
+}
+
+#nav-toggle:checked + .hamburger-icon:before {
+  top: 50%;
+  transform: rotate(45deg);
+  transition: top 0.2s, transform 0.2s 0.2s;
 }

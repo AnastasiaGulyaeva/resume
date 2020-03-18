@@ -35,12 +35,12 @@
 }
 
 .subheading {
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 500;
   font-style: normal;
   font-family: "Gotham";
   font-size: 1rem;
-  color: #cd928d;
+  color: #e657aa;
 }
 
 html {
@@ -83,6 +83,7 @@ h2 {
 
 h3 {
   font-size: 2rem;
+  text-transform: none;
 }
 
 p {
@@ -119,11 +120,11 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: #3f888f !important;
+  background-color: #326d72 !important;
 }
 
 .text-primary {
-  color: #3f888f !important;
+  color: #326d72 !important;
 }
 
 a {
@@ -133,5 +134,5 @@ a {
 a:hover,
 a:focus,
 a:active {
-  color: #cd928d;
+  color: #e657aa;
 }

@@ -12,7 +12,8 @@ import { InterestsComponent } from "./interests/interests.component";
 import { ContactComponent } from "./contact/contact.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { SendEmailComponent } from './components/send-email/send-email.component';
+
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,14 +24,14 @@ import { SendEmailComponent } from './components/send-email/send-email.component
     EducationComponent,
     SkillsComponent,
     InterestsComponent,
-    ContactComponent,
-    SendEmailComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

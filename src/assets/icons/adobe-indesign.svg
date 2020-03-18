@@ -7,9 +7,12 @@
 		fill: #868e96;
 		width: 56px;
 		height: 56px;
+		-webkit-transition: fill cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+ 		-moz-transition: fill cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+ 		transition: fill cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
 		}
 		svg:hover {
-		fill: #cd928d;
+		fill: #e657aa;
 		}
 	</style>
 <path class="icon" d="M56,0v54.6H0V0H56z M2.3,2.3v49.9h51.3V2.3H2.3z M20.5,37.9V12.8c0-0.1,0-0.2,0-0.2c0,0-0.1,0-0.2,0h-3.6

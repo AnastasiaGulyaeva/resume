@@ -1,12 +1,63 @@
-.dev-icons .list-inline-item i:hover {
-  color: #cd928d;
+.list-inline-item {
+  margin: 30px 14px 0 0;
 }
 
-svg {
-  fill: #868e96;
-  width: 56px;
-  height: 56px;
+.dev-icons .list-inline-item i {
+  cursor: pointer;
+  color: #868e96;
+  -webkit-transition: color cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+  -moz-transition: color cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+  transition: color cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
 }
-svg:hover {
-  fill: #cd928d;
+
+.dev-icons .list-inline-item i:hover {
+  color: #ec39a2;
+}
+
+/* всплывающая подсказка */
+span {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1rem;
+  color: white;
+  display: block;
+  cursor: pointer;
+  height: 56px;
+  width: auto;
+  position: relative;
+}
+span.overlay::before {
+  content: attr(data-overlay);
+  position: absolute;
+  top: -26px;
+  left: 0 px;
+  font-size: 15px;
+  padding: 5px 10px;
+  display: none;
+  color: white;
+  background: #868e96;
+  border-radius: 5px;
+  z-index: 99;
+  text-align: center;
+  width: auto;
+  white-space: nowrap;
+  height: 20px;
+  line-height: 10px;
+  animation-delay: 3s;
+}
+
+span:hover::before {
+  display: inline-block;
+  animation: fadeInOverlay cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+}
+@keyframes fadeInOverlay {
+  0% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

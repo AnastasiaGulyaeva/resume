@@ -1,16 +1,51 @@
-.interests-icons a {
-  display: inline-block;
-  height: 3.5rem;
-  width: 3.5rem;
-  background-color: #495057;
-  color: #fff !important;
-  border-radius: 100%;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 3.5rem;
-  margin-right: 1rem;
+.list-inline-item {
+  margin: 30px 14px 0 0;
 }
 
-.interests-icons a:hover {
-  background-color: #cd928d;
+/* всплывающая подсказка */
+span {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1rem;
+  color: white;
+  display: block;
+  cursor: pointer;
+  height: 56px;
+  width: auto;
+  position: relative;
+}
+span.overlay::before {
+  content: attr(data-overlay);
+  position: absolute;
+  top: -26px;
+  left: 0 px;
+  font-size: 15px;
+  padding: 5px 10px;
+  display: none;
+  color: white;
+  background: #868e96;
+  border-radius: 5px;
+  z-index: 99;
+  text-align: center;
+  width: auto;
+  white-space: nowrap;
+  height: 20px;
+  line-height: 10px;
+  animation-delay: 3s;
+}
+
+span:hover::before {
+  display: inline-block;
+  animation: fadeInOverlay cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+}
+@keyframes fadeInOverlay {
+  0% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -7,7 +7,9 @@
   border: 0;
   position: relative;
   z-index: 1;
-  transition: 0.2s ease;
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 400ms;
 }
 
 .btn:focus {
@@ -35,16 +37,16 @@
 }
 
 .btn-primary:active {
-  background: #bc8f8f !important;
+  background: #e657aa !important;
 }
 
 .btn-primary:hover {
-  background: #cd928d;
+  background: #ec39a2;
 }
 
 .btn-primary.focus,
 .btn-primary.active {
-  background: #cd928d !important;
+  background: #ec39a2 !important;
   box-shadow: none !important;
 }
 
@@ -87,8 +89,8 @@ textarea.form-control {
 }
 
 input.ng-touched.ng-invalid {
-  color: #bc8f8f;
-  border-color: #bc8f8f;
+  color: #e657aa;
+  border-color: #e657aa;
 }
 input.ng-touched.ng-valid {
   color: #3f888f;
@@ -99,5 +101,5 @@ input.ng-touched.ng-valid {
   font-family: "Gotham";
   font-weight: 300;
   font-style: normal;
-  color: #bc8f8f;
+  color: #e657aa;
 }
